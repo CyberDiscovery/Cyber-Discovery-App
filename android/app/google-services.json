@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "287186378897",
+    "firebase_url": "https://cyber-discovery.firebaseio.com",
+    "project_id": "cyber-discovery",
+    "storage_bucket": "cyber-discovery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287186378897:android:2796bb5d9b40e0ba",
+        "android_client_info": {
+          "package_name": "com.example.cyberdiscovery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "287186378897-d2jsrkeekke61mo8h74msnduhb853nr3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "287186378897-d2jsrkeekke61mo8h74msnduhb853nr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9yBidKPCJ3VRUFd4zIKouEWprqICOcn0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
