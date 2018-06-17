@@ -17,25 +17,23 @@ class EventCard extends StatelessWidget {
         padding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
           child: new Card(
           color: Colors.white,
-          child: new SizedBox(
-            child: new Column(
-              children: <Widget>[
-                new Container(
-                  color: new Color.fromRGBO(9, 24, 35, 1.0),
-                  child: new Image(image: _eventData.imageProvider),
-                ),
-                new Padding(
-                  padding: new EdgeInsets.only(top: 15.0),
-                  child: new Text(_eventData.name, style: Theme.of(context).textTheme.title),
-                ),
-                new Padding(
-                  padding: new EdgeInsets.symmetric(vertical: 5.0),
-                  child: new Text(_eventData.description, style: Theme.of(context).textTheme.caption),
-                ),
-                new Countdown(_eventData.timestamp),
-              ],
-            ),
-          )
+          child: new Column(
+            children: <Widget>[
+              new Container(
+                color: new Color.fromRGBO(9, 24, 35, 1.0),
+                child: new Image(image: _eventData.imageProvider),
+              ),
+              new Padding(
+                padding: new EdgeInsets.only(top: 15.0),
+                child: new Text(_eventData.name, style: Theme.of(context).textTheme.title),
+              ),
+              new Padding(
+                padding: new EdgeInsets.symmetric(vertical: 5.0),
+                child: new Text(_eventData.description, style: Theme.of(context).textTheme.caption),
+              ),
+              new Countdown(_eventData.timestamp),
+            ],
+          ),
         ),
       );
     }else {
