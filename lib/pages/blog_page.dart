@@ -9,8 +9,8 @@ import 'package:cyber_discovery/blog_data.dart';
 class BlogPage extends StatelessWidget {
   
   Future<String> getRSSData() {
-    String url = "https://medium.com/feed/@CyberDiscUK";
-    return http.read(url);
+    String rssFeed = "https://medium.com/feed/@CyberDiscUK";
+    return http.read(rssFeed);
   }
   
   @override
@@ -26,11 +26,8 @@ class BlogPage extends StatelessWidget {
           case ConnectionState.done:
             //Parse and Render RSS Data
             List<Widget> articles = [];
-            var document = xml.parse(snapshot.data).findAllElements("item").map((xml){
-              String title = xml.findElements("title").single.text;
-              print(title);
-              String content = xml.findElements("content:encoded").single.text;
-              BlogData data = new BlogData(title, content);
+            xml.parse(snapshot.data).findAllElements("item").forEach((xml){
+              BlogData data = new BlogData(xml);
               articles.add(new BlogCard(data));
             });
 
