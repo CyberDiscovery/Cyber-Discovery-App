@@ -8,9 +8,29 @@ import 'package:cyber_discovery/blog_data.dart';
 
 class BlogPage extends StatelessWidget {
   
-  Future<String> getRSSData() {
+  Future<String> getRSSData() async {
     String rssFeed = "https://medium.com/feed/@CyberDiscUK";
-    return http.read(rssFeed);
+    String data = await http.read(rssFeed);
+    //TODO implement https://pub.dartlang.org/packages/petitparser
+    int start = 0;
+    int end = 0;
+    while (true) {
+      if((start = data.indexOf("<scr")) != -1){
+        end = data.indexOf("</scr", start) + 9;
+        data = data.replaceRange(start, end, "");
+      }else {
+        break;
+      }
+    }
+    while (true) {
+      if((start = data.indexOf("<sty")) != -1){
+        end = data.indexOf("</sty", start) + 8;
+        data = data.replaceRange(start, end, "");
+      }else {
+        break;
+      }
+    }
+    return data;
   }
   
   @override
