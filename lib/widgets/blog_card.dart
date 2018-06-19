@@ -18,7 +18,7 @@ class BlogCard extends StatelessWidget {
         child: new Column(
           children: <Widget>[
             new Padding(
-              padding: new EdgeInsets.only(top: 16.0, bottom: 16.0),
+              padding: new EdgeInsets.symmetric(vertical: 16.0, horizontal: 2.0, ),
               child: new Text(_blogData.title,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.title
