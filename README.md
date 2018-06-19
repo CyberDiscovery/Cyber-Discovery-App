@@ -6,6 +6,7 @@ Source code for the cyber discovry app.  You should be able to build it from sou
 
 * The app has countdowns to all forthcoming events in the cyber discovery calender.
 * The app has a soundboard with some of our favorite clips from vc and agent j.
+* The app has the latest articles from the [Cyber Discovery Medium](https://medium.com/cyber-discovery) embeded for easy access.
 
 ## Compilation Instructions
 
@@ -22,5 +23,6 @@ Source code for the cyber discovry app.  You should be able to build it from sou
 ## Screen Shots
 
 ![screenshot of countdown](https://cdn.discordapp.com/attachments/409860647170342919/457574918700400661/device-2018-06-16-165902.png)
-![screenshot of nav bar](https://cdn.discordapp.com/attachments/409860647170342919/457575548898639872/device-2018-06-16-170142.png)
 ![screenshot of soundboard](https://cdn.discordapp.com/attachments/409860647170342919/457575256534548481/device-2018-06-16-170038.png)
+![screenshot of blog](https://cdn.discordapp.com/attachments/411573884597436416/458663730075664424/device-2018-06-19-170456.png)
+![screenshot of nav bar](https://cdn.discordapp.com/attachments/411573884597436416/458663730075664424/device-2018-06-19-170456.png)

@@ -10,6 +10,10 @@ dependencies:
   firebase_analytics: "^1.0.1"
   cached_network_image: "^0.4.1"
   audioplayer: "^0.4.0"
+  
+  xml: "^3.0.0"
+  html2md: "^0.1.7"
+  flutter_markdown: "^0.1.5"
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.0

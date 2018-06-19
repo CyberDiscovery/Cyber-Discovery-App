@@ -9,6 +9,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'package:cyber_discovery/pages/event_page.dart';
 import 'package:cyber_discovery/pages/soundboard_page.dart';
+import 'package:cyber_discovery/pages/blog_page.dart';
 import 'package:cyber_discovery/widgets/drawer_header.dart';
 import 'package:cyber_discovery/widgets/list_item.dart';
 
@@ -52,6 +53,8 @@ class _CyberDiscoveryAppState extends State<CyberDiscoveryApp> {
         return new EventPage(db);
       case 1: 
         return new SoundBoardPage(db, analytics);
+      case 2:
+        return new BlogPage();
       default:
         return new Text("ERROR");
     }
@@ -89,6 +92,7 @@ class _CyberDiscoveryAppState extends State<CyberDiscoveryApp> {
                 new DrawerHead(),
                 new ListItem(Icons.access_time, "Events", (){setState((){_pageId = 0;});}),
                 new ListItem(Icons.notifications, "Soundboard", (){setState((){_pageId = 1;});}),
+                new ListItem(Icons.library_books, "Blog", (){setState((){_pageId = 2;});}),
               ],
             ),
           ),
