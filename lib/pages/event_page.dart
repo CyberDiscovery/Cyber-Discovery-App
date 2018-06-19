@@ -16,8 +16,8 @@ class EventPage extends StatelessWidget {
     dynamic data = snapshot.value;
     int count = data["count"];
     var configuration = createLocalImageConfiguration(context);
-    List<EventData> eventData = [];
     
+    List<EventData> eventData = [];
     for (int i = 0; i<count; i++) {
       dynamic rawEventData = data[i.toString()];
       EventData event = new EventData(
@@ -28,6 +28,7 @@ class EventPage extends StatelessWidget {
       );
       eventData.add(event);
     }
+    eventData.sort((a, b) => a.timestamp.compareTo(b.timestamp));
     return eventData;
   }
 
@@ -36,7 +37,6 @@ class EventPage extends StatelessWidget {
     return new FutureBuilder(
       future: getEventData(_db, context),
       builder: (BuildContext context, AsyncSnapshot<List<EventData>> snapshot) {
-
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
             return new Center(
@@ -46,15 +46,15 @@ class EventPage extends StatelessWidget {
             //Got Data
             List<Widget> events = [];
             for(EventData data in snapshot.data) {
-              events.add(
-                new EventCard(data)
-              );
+              if (new DateTime.fromMillisecondsSinceEpoch(data.timestamp).isAfter(new DateTime.now())) {
+                events.add(
+                  new EventCard(data)
+                );
+              }
             }
-
             return new ListView(
               children: events,
             );
-
           default:
             //TODO
             //Image should  be here
