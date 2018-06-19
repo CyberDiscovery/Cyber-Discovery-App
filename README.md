@@ -25,4 +25,4 @@ Source code for the cyber discovry app.  You should be able to build it from sou
 ![screenshot of countdown](https://cdn.discordapp.com/attachments/409860647170342919/457574918700400661/device-2018-06-16-165902.png)
 ![screenshot of soundboard](https://cdn.discordapp.com/attachments/409860647170342919/457575256534548481/device-2018-06-16-170038.png)
 ![screenshot of blog](https://cdn.discordapp.com/attachments/411573884597436416/458663730075664424/device-2018-06-19-170456.png)
-![screenshot of nav bar](https://cdn.discordapp.com/attachments/411573884597436416/458663730075664424/device-2018-06-19-170456.png)
+![screenshot of nav bar](https://cdn.discordapp.com/attachments/411573884597436416/458663746483519493/device-2018-06-19-170531.png)
