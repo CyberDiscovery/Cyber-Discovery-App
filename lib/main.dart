@@ -7,11 +7,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-import 'package:cyber_discovery/pages/event_page.dart';
-import 'package:cyber_discovery/pages/soundboard_page.dart';
-import 'package:cyber_discovery/pages/blog_page.dart';
-import 'package:cyber_discovery/widgets/drawer_header.dart';
-import 'package:cyber_discovery/widgets/list_item.dart';
+import 'package:cyber_discovery/pages/home_page.dart';
 
 Future<void> main() async {
   final FirebaseApp app = await FirebaseApp.configure(
@@ -42,23 +38,9 @@ CyberDiscoveryApp(this._app);
 class _CyberDiscoveryAppState extends State<CyberDiscoveryApp> {
   final FirebaseApp _app;
   _CyberDiscoveryAppState(this._app);
-  int _pageId = 0;
 
   static FirebaseAnalytics analytics = new FirebaseAnalytics();
   final FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
-
-  Widget getActivePage(id, db) {
-    switch(id) {
-      case 0: 
-        return new EventPage(db);
-      case 1: 
-        return new SoundBoardPage(db, analytics);
-      case 2:
-        return new BlogPage();
-      default:
-        return new Text("ERROR");
-    }
-  }
 
   @override
   void initState() {
@@ -80,25 +62,7 @@ class _CyberDiscoveryAppState extends State<CyberDiscoveryApp> {
         accentColor: new Color.fromRGBO(62, 174, 211, 1.0),
         fontFamily: "Dosis",
       ),
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Cyber Discovery"),
-        ),
-        drawer: new Drawer(
-          child: new Container(
-            color: Colors.deepPurple[500],
-            child: new ListView(
-              children: <Widget>[
-                new DrawerHead(),
-                new ListItem(Icons.access_time, "Events", (){setState((){_pageId = 0;});}),
-                new ListItem(Icons.notifications, "Soundboard", (){setState((){_pageId = 1;});}),
-                new ListItem(Icons.library_books, "Blog", (){setState((){_pageId = 2;});}),
-              ],
-            ),
-          ),
-        ),
-        body: getActivePage(_pageId, db),
-      backgroundColor: new Color.fromRGBO(9, 24, 35, 1.0)),
+      home: new HomePage(db, analytics),
     );
   }
 }
