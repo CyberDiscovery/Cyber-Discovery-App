@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:audioplayer/audioplayer.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import 'package:cyber_discovery/sound.dart';
 
@@ -56,11 +57,12 @@ class SoundTab extends StatelessWidget {
                   child: new Card(
                     color: new Color.fromARGB(100, 106, 130, 154),
                     child: new InkWell(
-                      onTap: (){
+                      onTap: () async {
                         //Play
                         _audioPlayer.stop();
-                        _audioPlayer.play(sound.url);
-                        //Log Listen
+                        CacheManager cacheManager = await CacheManager.getInstance();
+                        var file = await cacheManager.getFile(sound.url);
+                        _audioPlayer.play(file.path, isLocal: true);
                         _sendAnalyticsEvent(sound.name);
                       },
                       child: new Padding(

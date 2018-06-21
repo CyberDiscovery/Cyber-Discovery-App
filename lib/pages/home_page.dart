@@ -62,9 +62,11 @@ class _HomePageState extends State<HomePage> {
                     Navigator.pop(context);
                   });
                 }),
-                new ListItem(Icons.library_books, "Blog", (){
-                  Navigator.pop(context);
-                  setState((){_pageId = 2;});
+                new ListItem(Icons.library_books, "Blog", (){setState(
+                  (){
+                    _pageId = 2;
+                    Navigator.pop(context);
+                  });
                 }),
               ],
             ),
