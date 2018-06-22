@@ -6,6 +6,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:cyber_discovery/widgets/drawer_header.dart';
 import 'package:cyber_discovery/widgets/list_item.dart';
 import 'package:cyber_discovery/pages/event_page.dart';
+import 'package:cyber_discovery/pages/schedule_page.dart';
 import 'package:cyber_discovery/pages/soundboard_page.dart';
 import 'package:cyber_discovery/pages/blog_page.dart';
 
@@ -33,6 +34,8 @@ class _HomePageState extends State<HomePage> {
         return new SoundBoardPage(db, analytics);
       case 2:
         return new BlogPage();
+      case 3:
+        return new SchedulePage(db);
       default:
         return new Text("ERROR");
     }
@@ -56,6 +59,13 @@ class _HomePageState extends State<HomePage> {
                     Navigator.pop(context);
                   });
                 }),
+                new ListItem(Icons.calendar_today, "Schedule", (){setState(
+                  (){
+                    _pageId = 3;
+                    Navigator.pop(context);
+                  }
+                );}
+                ),
                 new ListItem(Icons.notifications, "Soundboard", (){setState(
                   (){
                     _pageId = 1;
