@@ -56,7 +56,7 @@ class _CyberDiscoveryAppState extends State<CyberDiscoveryApp> {
     
     return MaterialApp(
       title: "Cyber Discovery",
-      color: new Color.fromRGBO(13, 35, 50, 1.0),
+      color: Colors.deepPurple[500],
       theme: new ThemeData(
         primaryColor: Colors.deepPurple[500],
         accentColor: new Color.fromRGBO(62, 174, 211, 1.0),
