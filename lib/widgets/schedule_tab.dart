@@ -3,6 +3,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:firebase_database/firebase_database.dart';
+import 'package:cyber_discovery/schedule_state.dart';
 
 import 'package:cyber_discovery/widgets/prevention_message.dart';
 import 'package:cyber_discovery/widgets/schedule_header.dart';
@@ -20,11 +21,22 @@ class ScheduleTab extends StatelessWidget {
     return _db.reference().child("Schedule").child("Schedules").child(_tabName).once();
   }
 
-  bool isAcive(DateTime startTime, DateTime endTime, DateTime now) {
-    return (
-      startTime.millisecondsSinceEpoch < now.millisecondsSinceEpoch &&
-      now.millisecondsSinceEpoch < endTime.millisecondsSinceEpoch
-    );
+  ScheduleState getState(DateTime startTime, DateTime endTime, DateTime now) {
+    String state;
+    bool active;
+    
+    if (now.millisecondsSinceEpoch < startTime.millisecondsSinceEpoch) {
+      state = "Not Started";
+      active = false;
+    }
+    else if (startTime.millisecondsSinceEpoch < now.millisecondsSinceEpoch && now.millisecondsSinceEpoch < endTime.millisecondsSinceEpoch) {
+      state = "Active";
+      active = true;
+    }else {
+      state = "Finished";
+      active = false;
+    }
+    return new ScheduleState(state, active);
   }
 
   double getProgress(DateTime startTime, DateTime endTime, DateTime now) {
@@ -49,14 +61,13 @@ class ScheduleTab extends StatelessWidget {
             DateTime now = new DateTime.now();
             DateTime startTime = new DateTime.fromMillisecondsSinceEpoch(data["startTimestamp"], isUtc: true).toLocal();
             DateTime endTime = new DateTime.fromMillisecondsSinceEpoch(data["endTimestamp"], isUtc: true).toLocal();
-            bool active = isAcive(startTime, endTime, now);
-            double progress = getProgress(startTime, endTime, now);
+            ScheduleState state = getState(startTime, endTime, now);
 
             //Activities
             int count = data["activities"]["count"];
             int i = 0;
             List<Widget> activities = [
-              new ScheduleHeader(_tabName, active, progress)
+              new ScheduleHeader(_tabName, state)
             ];
 
             for(i; i<count; i++) {
