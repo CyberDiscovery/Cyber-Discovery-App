@@ -51,7 +51,7 @@ class EventPage extends StatelessWidget {
             //Got Data
             List<Widget> events = [];
             for(EventData data in snapshot.data) {
-              if (new DateTime.fromMillisecondsSinceEpoch(data.timestamp).isAfter(new DateTime.now())) {
+              if (new DateTime.fromMillisecondsSinceEpoch(data.timestamp, isUtc: true).isAfter(new DateTime.now())) {
                 events.add(
                   new EventCard(data)
                 );
