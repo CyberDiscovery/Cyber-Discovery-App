@@ -38,6 +38,10 @@ class EventPage extends StatelessWidget {
     return new FutureBuilder(
       future: getEventData(_db, context),
       builder: (BuildContext context, AsyncSnapshot<List<EventData>> snapshot) {
+        if (snapshot.hasError) {
+          return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
+        }
+        
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
             return new Center(
@@ -53,9 +57,13 @@ class EventPage extends StatelessWidget {
                 );
               }
             }
-            return new ListView(
-              children: events,
-            );
+
+            if (events.length > 0) {
+              return new ListView(
+                children: events,
+              );
+            }
+            return new ErrorMessage("There are currently no listed events", "Who forgot to put the events in the database?");
           default:
             return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
         }
