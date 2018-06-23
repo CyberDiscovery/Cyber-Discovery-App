@@ -34,7 +34,7 @@ class _CountdownState extends State<Countdown> with TickerProviderStateMixin {
     super.initState();
 
     DateTime now = new DateTime.now();
-    event = new DateTime.fromMillisecondsSinceEpoch(_timestamp);  
+    event = new DateTime.fromMillisecondsSinceEpoch(_timestamp, isUtc: true);  
     duration = event.difference(now);
 
     controller = new AnimationController(

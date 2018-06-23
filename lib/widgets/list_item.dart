@@ -22,8 +22,14 @@ class ListItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                new Icon(_icon, color: Colors.white, size: 40.0,),
-                new Text(_text, style: Theme.of(context).textTheme.title.apply(color: Colors.white),)
+                new Flexible(
+                  fit: FlexFit.tight,
+                  child: new Icon(_icon, color: Colors.white, size: 40.0),
+                ), 
+                new Flexible(
+                  fit: FlexFit.tight,
+                  child: new Text(_text, style: Theme.of(context).textTheme.title.apply(color: Colors.white)),
+                ),
               ]),
             ),
           ),
