@@ -32,7 +32,7 @@ class SchedulePage extends StatelessWidget {
             List<Widget> tabPages = [];
             for(i; i < count; i++) {
               tabs.add(new Tab(text: data[i.toString()]));
-              tabPages.add(new ScheduleTab());
+              tabPages.add(new ScheduleTab(_db, data[i.toString()]));
             }
 
             return new DefaultTabController(
