@@ -75,6 +75,7 @@ class ScheduleTab extends StatelessWidget {
               activities.add(new Activity(
                 new ActivityData(
                   data["activities"][i.toString()]["name"],
+                  data["activities"][i.toString()]["description"],
                   data["activities"][i.toString()]["startTimestamp"],
                   data["activities"][i.toString()]["endTimestamp"]
                 ))

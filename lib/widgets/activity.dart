@@ -36,6 +36,7 @@ class _ActivityState extends State<Activity> {
       child: new Padding(
         padding: new EdgeInsets.all(5.0),
         child: new Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             new Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -48,6 +49,7 @@ class _ActivityState extends State<Activity> {
                 new Flexible(
                   fit: FlexFit.tight,
                   child: new Text(activityData.name,
+                    overflow: TextOverflow.ellipsis,
                     style: Theme.of(context).textTheme.title,        
                   ),
                 ),
@@ -60,6 +62,9 @@ class _ActivityState extends State<Activity> {
                   child: new Text("End: " + getHumanTime(endTime)),
                 ),
               ],
+            ),
+            new Text(activityData.description,
+              style: Theme.of(context).textTheme.caption,
             ),
             new Padding(
               padding: new EdgeInsets.only(top: 5.0),
