@@ -36,19 +36,22 @@ class SchedulePage extends StatelessWidget {
               tabPages.add(new ScheduleTab(_db, data[i.toString()]));
             }
 
-            return new DefaultTabController(
-              length: i+1,
-              child: new Scaffold(
-                backgroundColor: new Color.fromRGBO(13, 35, 50, 1.0),
-                appBar: new TabBar(
-                  tabs: tabs,
-                  indicatorColor: Theme.of(context).primaryColor,
+            if (tabs.length > 0) {
+              return new DefaultTabController(
+                length: i+1,
+                child: new Scaffold(
+                  backgroundColor: new Color.fromRGBO(13, 35, 50, 1.0),
+                  appBar: new TabBar(
+                    tabs: tabs,
+                    indicatorColor: Theme.of(context).primaryColor,
+                  ),
+                  body: new TabBarView(
+                    children: tabPages,
+                  ),
                 ),
-                body: new TabBarView(
-                  children: tabPages,
-                ),
-              ),
-            );
+              );
+            }
+            return new ErrorMessage("There are currently no listed schedules", "Who forgot to put the schedules in the database?");
           default:
             return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
         }
