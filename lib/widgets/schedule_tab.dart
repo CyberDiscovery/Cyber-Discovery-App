@@ -28,15 +28,16 @@ class ScheduleTab extends StatelessWidget {
     if (now.millisecondsSinceEpoch < startTime.millisecondsSinceEpoch) {
       state = "Not Started";
       active = false;
-    }
-    else if (startTime.millisecondsSinceEpoch < now.millisecondsSinceEpoch && now.millisecondsSinceEpoch < endTime.millisecondsSinceEpoch) {
-      state = "Active";
+      return new ScheduleState(state, active);
+    }else if (now.millisecondsSinceEpoch > startTime.millisecondsSinceEpoch && now.millisecondsSinceEpoch < endTime.millisecondsSinceEpoch) {
+      state = "On Going";
       active = true;
+      return new ScheduleState(state, active);
     }else {
       state = "Finished";
       active = false;
+      return new ScheduleState(state, active);
     }
-    return new ScheduleState(state, active);
   }
 
   double getProgress(DateTime startTime, DateTime endTime, DateTime now) {
