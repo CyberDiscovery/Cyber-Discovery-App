@@ -68,7 +68,7 @@ class ScheduleTab extends StatelessWidget {
             int count = data["activities"]["count"];
             int i = 0;
             List<Widget> activities = [
-              new ScheduleHeader(_tabName, state)
+              new ScheduleHeader(_tabName, startTime, state)
             ];
 
             for(i; i<count; i++) {

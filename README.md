@@ -5,6 +5,7 @@ Source code for the cyber discovry app.  You should be able to build it from sou
 ## Features
 
 * The app has countdowns to all forthcoming events in the cyber discovery calender.
+* The app has a schedule for certain activities duraning a events showing when they start, finish and how much of the activity that has happened. 
 * The app has a soundboard with some of our favorite clips from vc and agent j.
 * The app has the latest articles from the [Cyber Discovery Medium](https://medium.com/cyber-discovery) embeded for easy access.
 
