@@ -41,6 +41,7 @@ flutter:
   assets:
     - assets/images/drawer_head.png
     - assets/images/unreleased.png
+    - assets/images/error_image.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

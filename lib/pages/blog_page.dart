@@ -5,6 +5,7 @@ import 'dart:async';
 
 import 'package:cyber_discovery/widgets/blog_card.dart';
 import 'package:cyber_discovery/blog_data.dart';
+import 'package:cyber_discovery/widgets/error_message.dart';
 
 class BlogPage extends StatelessWidget {
   
@@ -12,6 +13,7 @@ class BlogPage extends StatelessWidget {
     String rssFeed = "https://medium.com/feed/@CyberDiscUK";
     String data = await http.read(rssFeed);
     //TODO implement https://pub.dartlang.org/packages/petitparser
+    
     int start = 0;
     int end = 0;
     while (true) {
@@ -38,6 +40,11 @@ class BlogPage extends StatelessWidget {
     return FutureBuilder(
       future: getRSSData(),
       builder: (BuildContext context, AsyncSnapshot<String> snapshot){
+        
+        if (snapshot.hasError) {
+          return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
+        }
+
         switch(snapshot.connectionState) {
           case ConnectionState.waiting:
             return new Center(
@@ -55,7 +62,7 @@ class BlogPage extends StatelessWidget {
               children: articles,
             );
           default:
-            return new Text("ERROR");
+            return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
         }
       },
     );

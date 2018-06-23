@@ -9,6 +9,7 @@ import 'package:cyber_discovery/pages/event_page.dart';
 import 'package:cyber_discovery/pages/schedule_page.dart';
 import 'package:cyber_discovery/pages/soundboard_page.dart';
 import 'package:cyber_discovery/pages/blog_page.dart';
+import 'package:cyber_discovery/widgets/error_message.dart';
 
 class HomePage extends StatefulWidget {
   final FirebaseDatabase _db;
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       case 3:
         return new SchedulePage(db);
       default:
-        return new Text("ERROR");
+        return new ErrorMessage("Welp Something Went Wrong", "Unknown Cause");
     }
   }
   

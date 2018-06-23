@@ -6,6 +6,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:cyber_discovery/widgets/event_card.dart';
 import 'package:cyber_discovery/event_data.dart';
+import 'package:cyber_discovery/widgets/error_message.dart';
 
 class EventPage extends StatelessWidget {
   final FirebaseDatabase _db;
@@ -56,9 +57,7 @@ class EventPage extends StatelessWidget {
               children: events,
             );
           default:
-            //TODO
-            //Image should  be here
-            return new Text("ERROR");
+            return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
         }
       },
     );

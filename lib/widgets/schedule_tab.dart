@@ -8,6 +8,7 @@ import 'package:cyber_discovery/widgets/prevention_message.dart';
 import 'package:cyber_discovery/widgets/schedule_header.dart';
 import 'package:cyber_discovery/widgets/activity.dart';
 import 'package:cyber_discovery/activity_data.dart';
+import 'package:cyber_discovery/widgets/error_message.dart';
 
 class ScheduleTab extends StatelessWidget {
   final FirebaseDatabase _db;
@@ -19,11 +20,18 @@ class ScheduleTab extends StatelessWidget {
     return _db.reference().child("Schedule").child("Schedules").child(_tabName).once();
   }
 
-  bool isAcive(data) {
-    int startTime = new DateTime.fromMillisecondsSinceEpoch(data["startTimestamp"], isUtc: true).millisecondsSinceEpoch;
-    int endTime = new DateTime.fromMillisecondsSinceEpoch(data["endTimestamp"], isUtc: true).millisecondsSinceEpoch;
-    int now = new DateTime.now().millisecondsSinceEpoch + 3600000;
-    return (startTime < now && now < endTime);
+  bool isAcive(DateTime startTime, DateTime endTime, DateTime now) {
+    return (
+      startTime.millisecondsSinceEpoch < now.millisecondsSinceEpoch &&
+      now.millisecondsSinceEpoch < endTime.millisecondsSinceEpoch
+    );
+  }
+
+  double getProgress(DateTime startTime, DateTime endTime, DateTime now) {
+    double progress = (now.millisecondsSinceEpoch - startTime.millisecondsSinceEpoch)/(endTime.millisecondsSinceEpoch - startTime.millisecondsSinceEpoch);
+    progress = max(progress, 0.0);
+    progress = min(progress, 1.0);
+    return progress;
   }
 
   @override
@@ -37,15 +45,12 @@ class ScheduleTab extends StatelessWidget {
               child: new CircularProgressIndicator(),
             );
           case ConnectionState.done:
-            var data = snapshot.data.value;
-            bool active = isAcive(data);
-            
+            var data = snapshot.data.value;    
             DateTime now = new DateTime.now();
             DateTime startTime = new DateTime.fromMillisecondsSinceEpoch(data["startTimestamp"], isUtc: true).toLocal();
             DateTime endTime = new DateTime.fromMillisecondsSinceEpoch(data["endTimestamp"], isUtc: true).toLocal();
-            double progress = (now.millisecondsSinceEpoch - startTime.millisecondsSinceEpoch)/(endTime.millisecondsSinceEpoch - startTime.millisecondsSinceEpoch);
-            progress = max(progress, 0.0);
-            progress = min(progress, 1.0);
+            bool active = isAcive(startTime, endTime, now);
+            double progress = getProgress(startTime, endTime, now);
 
             //Activities
             int count = data["activities"]["count"];
@@ -73,7 +78,7 @@ class ScheduleTab extends StatelessWidget {
               ):
               new PreventionMessage("The schedule for this event hasn't been released");
           default:
-            return new Text("ERROR");
+            return new ErrorMessage("Failed to Connect", "Check your connection to the internet");
         }
       },
     );

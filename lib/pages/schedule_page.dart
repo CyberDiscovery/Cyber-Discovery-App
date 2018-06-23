@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:firebase_database/firebase_database.dart';
 
 import 'package:cyber_discovery/widgets/schedule_tab.dart';
+import 'package:cyber_discovery/widgets/error_message.dart';
 
 class SchedulePage extends StatelessWidget {
   final FirebaseDatabase _db;
@@ -49,7 +50,7 @@ class SchedulePage extends StatelessWidget {
               ),
             );
           default:
-            return new Text("ERROR");
+            return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
         }
       },
     );

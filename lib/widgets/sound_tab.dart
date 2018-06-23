@@ -7,6 +7,7 @@ import 'package:audioplayer/audioplayer.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 
 import 'package:cyber_discovery/sound.dart';
+import 'package:cyber_discovery/widgets/error_message.dart';
 
 class SoundTab extends StatelessWidget {
   final FirebaseDatabase _db;
@@ -85,9 +86,7 @@ class SoundTab extends StatelessWidget {
               children: children,
             );
           default:
-            //Pretty Picture Here
-            //TODO
-            return new Text("Error");
+            return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
         }
       },
     );

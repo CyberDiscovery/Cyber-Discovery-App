@@ -6,6 +6,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:audioplayer/audioplayer.dart';
 
 import 'package:cyber_discovery/widgets/sound_tab.dart';
+import 'package:cyber_discovery/widgets/error_message.dart';
 
 class SoundBoardPage extends StatelessWidget {
   final FirebaseDatabase _db;
@@ -61,9 +62,7 @@ class SoundBoardPage extends StatelessWidget {
               )
             );
           default:
-            //TODO
-            //Internet Error Picture Maybe?
-            return new Text("ERROR");
+            return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
         }
       },
     );
