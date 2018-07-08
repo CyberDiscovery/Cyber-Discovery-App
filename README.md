@@ -1,6 +1,6 @@
 # Cyber Discovery App
 
-Source code for the cyber discovry app.  You should be able to build it from source on either platform however we have a prebuilt [apk](https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/tag/0.3) for android.
+Source code for the cyber discovry app.  You should be able to build it from source on either platform however we have a prebuilt [apk or ipa](https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/tag/0.3) for android and iOS respectively.
 
 ## Features
 
