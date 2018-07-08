@@ -1,6 +1,6 @@
 # Cyber Discovery App
 
-Source code for the cyber discovry app.  You should be able to build it from source on either platform however we have a prebuilt [apk or ipa](https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/tag/0.3) for android and iOS respectively.
+Source code for the cyber discovery app.  You should be able to build it from source on Android, and we have a prebuilt [apk or ipa](https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/tag/0.3) for android and iOS respectively.
 
 ## Features
 
@@ -12,9 +12,9 @@ Source code for the cyber discovry app.  You should be able to build it from sou
 ## Compilation Instructions
 
 ### Android
-* Make sure you have flutter installed and if you run `flutter doctor` you have no issues.
+* Ensure that flutter is installed and that running `flutter doctor` produces no errors.
 * Download the source from the releases page. 
-* Navigate to the root of the flutter project
+* Navigate to the root of the downloaded folder
 * Run `flutter build apk`
 * If you navigate to the build directory then app then apk then release you should find your apk file if everything went to plan. 
 ### iOS
