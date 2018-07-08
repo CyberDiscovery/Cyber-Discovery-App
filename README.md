@@ -19,7 +19,11 @@ Source code for the cyber discovry app.  You should be able to build it from sou
 * If you navigate to the build directory then app then apk then release you should find your apk file if everything went to plan. 
 ### IOS
 * Make sure you have flutter and xcode installed. Running the `flutter doctor` command will highlight any problems. 
-* Try and compile then please write some good instructions for me if you are successful. 
+* In `lib/main.dart`, and ensure that you have changed the values such as API keys, app IDs, and Sender IDs to the correct values
+* Again, in `lib/main.dart`, change the `name` value to `Cyber_Discovery`.
+* Now, in the root of the project, run `flutter build ios`
+* After the build is finished, open the `Runner.xcworkspake` file in `ios/Runner.xcworkspace`
+* Build an IPA or any other type of build as you would normally
 
 ## Screen Shots
 
