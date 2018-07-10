@@ -4,18 +4,18 @@ Source code for the cyber discovery app.  You should be able to build it from so
 
 ## Features
 
-* The app has countdowns to all forthcoming events in the cyber discovery calender.
-* The app has a schedule for certain activities duraning a events showing when they start, finish and how much of the activity that has happened. 
-* The app has a soundboard with some of our favorite clips from vc and agent j.
-* The app has the latest articles from the [Cyber Discovery Medium](https://medium.com/cyber-discovery) embeded for easy access.
+* The app has countdowns to all forthcoming events in the Cyber Discovery calendar.
+* The app has a schedule for certain activities during events showing when they start, finish and how much of the activity has happened. 
+* The app has a soundboard with some of our favorite clips from VC and Agent J.
+* The app has the latest articles from the [Cyber Discovery Medium](https://medium.com/cyber-discovery) embedded for easy access.
 
 ## Compilation Instructions
 
 ### Android
 * Ensure that flutter is installed and that running `flutter doctor` produces no errors.
 * Download the source from the releases page. 
-* Navigate to the root of the downloaded folder
-* Run `flutter build apk`
+* Navigate to the root of the downloaded folder.
+* Run `flutter build apk`.
 * If you navigate to the build directory then app then apk then release you should find your apk file if everything went to plan. 
 ### iOS
 * Buliding iOS from source isn't possible due to a signing limitation by Apple. Please use the compiled [ipa](https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/tag/0.3) and sideload it using Cydia Impactor.
