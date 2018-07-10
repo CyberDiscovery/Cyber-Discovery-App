@@ -12,7 +12,7 @@ class DrawerHead extends StatelessWidget {
           new Text("Cyber Discovery App", style: Theme.of(context).textTheme.headline.apply(color: Colors.white)),
           new Padding(
             padding: new EdgeInsets.only(top: 5.0),
-            child: new Text("The OFFICAL Cyber Discovery App", style: Theme.of(context).textTheme.caption.apply(color: Colors.white))
+            child: new Text("The UNOFFICAL Cyber Discovery App", style: Theme.of(context).textTheme.caption.apply(color: Colors.white))
           ),
           new Divider()
         ],
