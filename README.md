@@ -23,6 +23,8 @@ Source code for the cyber discovery app.  You should be able to build it from so
 ## Screen Shots
 
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/409860647170342919/457574918700400661/device-2018-06-16-165902.png" width="400"><img src="https://cdn.discordapp.com/attachments/409860647170342919/457575256534548481/device-2018-06-16-170038.png" width="400">
-<img src="https://cdn.discordapp.com/attachments/409860647170342919/457575256534548481/device-2018-06-16-170038.png" width="400"><img src="https://cdn.discordapp.com/attachments/411573884597436416/458663746483519493/device-2018-06-19-170531.png" width="400">
+<img src="https://cdn.discordapp.com/attachments/409860647170342919/457574918700400661/device-2018-06-16-165902.png" width="400">
+<img src="https://cdn.discordapp.com/attachments/409860647170342919/457575256534548481/device-2018-06-16-170038.png" width="400">
+<img src="https://cdn.discordapp.com/attachments/458769653481865227/466994626801434635/device-2018-07-12-164927.png" width="400">
+<img src="https://cdn.discordapp.com/attachments/411573884597436416/458663746483519493/device-2018-06-19-170531.png" width="400">
 </p>
