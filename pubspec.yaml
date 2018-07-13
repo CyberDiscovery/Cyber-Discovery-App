@@ -1,15 +1,17 @@
 name: cyber_discovery
-description: A new Flutter project.
+description: Never miss a deadline again and keep up with the latest meme culture with the UNOFFICIAL Cyber Discovery App.
 
 dependencies:
   flutter:
     sdk: flutter
-    
+
+  # Firebase
   firebase_core: "^0.2.4"
   firebase_database: "^1.0.1"
   firebase_messaging: "^1.0.2"
   firebase_analytics: "^1.0.1"
 
+  # Other Dependencies
   cached_network_image: "^0.4.1"
   flutter_cache_manager: "^0.1.1"
   audioplayer: "^0.4.0"
@@ -18,17 +20,9 @@ dependencies:
   flutter_markdown: "^0.1.5"
   intl: "^0.15.6"
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.0
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-
-# For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
@@ -38,24 +32,13 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # Images
   assets:
     - assets/images/drawer_head.png
     - assets/images/unreleased.png
     - assets/images/error_image.png
-  #  - images/a_dot_ham.jpeg
 
-  # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.io/assets-and-images/#resolution-aware.
-
-  # For details regarding adding assets from package dependencies, see
-  # https://flutter.io/assets-and-images/#from-packages
-
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
-  # list giving the asset and other descriptors for the font. For
-  # example:
+  # Fonts
   fonts:
     - family: Dosis
       fonts:
@@ -63,18 +46,3 @@ flutter:
           style: normal
         - asset: fonts/dosis_semibold.ttf
           weight: 600
-  
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies, 
-  # see https://flutter.io/custom-fonts/#from-packages

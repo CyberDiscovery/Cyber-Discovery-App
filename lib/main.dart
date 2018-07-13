@@ -11,7 +11,7 @@ import 'package:cyber_discovery/pages/home_page.dart';
 
 Future<void> main() async {
   final FirebaseApp app = await FirebaseApp.configure(
-    name: "Cyber Discovery",
+    name: "Cyber_Discovery",
     options: Platform.isIOS
       ? const FirebaseOptions(
         googleAppID: '1:287186378897:ios:17ac1b5ae5577712',
@@ -19,7 +19,7 @@ Future<void> main() async {
         databaseURL: 'https://cyber-discovery.firebaseio.com',
       )
       : const FirebaseOptions(
-        googleAppID: '1:287186378897:android:2796bb5d9b40e0ba',
+        googleAppID: '1:287186378897:android:c85a13fe2a93b3e0',
         apiKey: 'AIzaSyA9yBidKPCJ3VRUFd4zIKouEWprqICOcn0',
         databaseURL: 'https://cyber-discovery.firebaseio.com',
       )

@@ -23,11 +23,11 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.cyberdiscovery"
+        applicationId "com.danielmilnes.cyberdiscovery"
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 3
-        versionName "1.2"
+        versionCode 4
+        versionName "1.2.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
