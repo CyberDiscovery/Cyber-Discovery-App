@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
@@ -77,6 +79,11 @@ class _HomePageState extends State<HomePage> {
                   (){
                     _pageId = 2;
                     Navigator.pop(context);
+                  });
+                }),
+                new ListItem(Icons.group, "Discord", (){setState(
+                        (){
+                    launch("https://discord.gg/Kf8n5rT");
                   });
                 }),
               ],
