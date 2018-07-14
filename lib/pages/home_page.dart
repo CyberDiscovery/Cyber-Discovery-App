@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                   });
                 }),
                 new ListItem(Icons.group, "Discord", (){setState(
-                        (){
+                  (){
                     launch("https://discord.gg/Kf8n5rT");
                   });
                 }),
