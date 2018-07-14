@@ -47,7 +47,6 @@ captures/
 *.ipr
 *~
 *.swp
-android/app/release/
 
 # Android Patch
 gen-external-apklibs
@@ -87,7 +86,6 @@ obj/
 .idea/dynamic.xml
 .idea/uiDesigner.xml
 .idea/codeStyles/Project.xml
-android/.idea
 
 # OS-specific files
 .DS_Store
@@ -234,10 +232,6 @@ fastlane/test_output
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 
 ### Windows ###
 # Windows thumbnail cache files
