@@ -64,14 +64,66 @@ class _CountdownState extends State<Countdown> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: <Widget>[
-                new Text(times["days"].toString(), style: Theme.of(context).textTheme.headline,),
-                new Text("days", style: Theme.of(context).textTheme.body1,),
-                new Text(times["hours"].toString(), style: Theme.of(context).textTheme.headline,),
-                new Text("hours", style: Theme.of(context).textTheme.body1,),
-                new Text(times["minutes"].toString(), style: Theme.of(context).textTheme.headline,),
-                new Text("minutes", style: Theme.of(context).textTheme.body1,),
-                new Text(times["seconds"].toString(), style: Theme.of(context).textTheme.headline,),
-                new Text("seconds", style: Theme.of(context).textTheme.body1,),
+                new Flexible(
+                  fit: FlexFit.tight,
+                  child: new Text(
+                    times["days"].toString(),
+                    style: Theme.of(context).textTheme.headline,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                new Flexible(
+                  fit: FlexFit.loose,
+                  child: new Text(
+                    "days",
+                    style: Theme.of(context).textTheme.body1,
+                  ),
+                ),
+                new Flexible(
+                  fit: FlexFit.tight,
+                  child: new Text(
+                    times["hours"].toString(),
+                    style: Theme.of(context).textTheme.headline,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                new Flexible(
+                  fit: FlexFit.loose,
+                  child: new Text(
+                    "hours",
+                    style: Theme.of(context).textTheme.body1,
+                  ),
+                ),
+                new Flexible(
+                  fit: FlexFit.tight,
+                  child: new Text(
+                    times["minutes"].toString(),
+                    style: Theme.of(context).textTheme.headline,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                new Flexible(
+                  fit: FlexFit.loose,
+                  child: new Text(
+                    "minutes",
+                    style: Theme.of(context).textTheme.body1,
+                  ),
+                ),
+                new Flexible(
+                  fit: FlexFit.tight,
+                  child: new Text(
+                    times["seconds"].toString(),
+                    style: Theme.of(context).textTheme.headline,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                new Flexible(
+                  fit: FlexFit.loose,
+                  child: new Text(
+                    "seconds",
+                    style: Theme.of(context).textTheme.body1,
+                  ),
+                ),
               ],
             ),
           );
