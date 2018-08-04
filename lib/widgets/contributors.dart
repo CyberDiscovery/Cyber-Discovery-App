@@ -16,7 +16,7 @@ class Contributors extends StatelessWidget {
               new Text("Contributors", style: Theme.of(context).textTheme.headline),
               new Padding(
                 padding: new EdgeInsets.symmetric(vertical: 5.0),
-                child: new Text("This app is the result of some amazing people from the comunity why not give them a follow and show your appreciation."),
+                child: new Text("This app is the result of some amazing people from the community! Why not give them a follow and show your appreciation?"),
               ),
               new GestureDetector(
                 child: new Padding(

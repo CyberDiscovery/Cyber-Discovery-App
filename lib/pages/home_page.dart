@@ -9,7 +9,7 @@ import 'package:cyber_discovery/pages/event_page.dart';
 import 'package:cyber_discovery/pages/schedule_page.dart';
 import 'package:cyber_discovery/pages/soundboard_page.dart';
 import 'package:cyber_discovery/pages/blog_page.dart';
-import 'package:cyber_discovery/pages/comunity_page.dart';
+import 'package:cyber_discovery/pages/community_page.dart';
 import 'package:cyber_discovery/widgets/error_message.dart';
 
 class HomePage extends StatefulWidget {
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.pop(context);
                   });
                 }),
-                new ListItem(Icons.people, "Comunity", (){setState(
+                new ListItem(Icons.people, "Community", (){setState(
                   (){
                     _pageId = 4;
                     Navigator.pop(context);
