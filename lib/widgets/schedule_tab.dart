@@ -35,7 +35,7 @@ class ScheduleTab extends StatelessWidget {
       return new ScheduleState(state, active);
     }else {
       state = "Finished";
-      active = false;
+      active = true;
       return new ScheduleState(state, active);
     }
   }
