@@ -38,7 +38,7 @@ flutter:
     - assets/images/drawer_head.png
     - assets/images/unreleased.png
     - assets/images/error_image.png
-
+    - assets/images/contributors.png
   # Fonts
   fonts:
     - family: Dosis
