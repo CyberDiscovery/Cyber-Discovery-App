@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:url_launcher/url_launcher.dart';
-
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
@@ -11,6 +9,7 @@ import 'package:cyber_discovery/pages/event_page.dart';
 import 'package:cyber_discovery/pages/schedule_page.dart';
 import 'package:cyber_discovery/pages/soundboard_page.dart';
 import 'package:cyber_discovery/pages/blog_page.dart';
+import 'package:cyber_discovery/pages/comunity_page.dart';
 import 'package:cyber_discovery/widgets/error_message.dart';
 
 class HomePage extends StatefulWidget {
@@ -39,6 +38,8 @@ class _HomePageState extends State<HomePage> {
         return new BlogPage();
       case 3:
         return new SchedulePage(db);
+      case 4:
+        return new ComunityPage(db);
       default:
         return new ErrorMessage("Welp Something Went Wrong", "Unknown Cause");
     }
@@ -81,9 +82,10 @@ class _HomePageState extends State<HomePage> {
                     Navigator.pop(context);
                   });
                 }),
-                new ListItem(Icons.people, "Discord", (){setState(
+                new ListItem(Icons.people, "Comunity", (){setState(
                   (){
-                    launch("https://discord.gg/Kf8n5rT");
+                    _pageId = 4;
+                    Navigator.pop(context);
                   });
                 }),
               ],
