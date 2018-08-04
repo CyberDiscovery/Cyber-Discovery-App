@@ -18,7 +18,7 @@ Source code for the cyber discovery app.  You should be able to build it from so
 * Run `flutter build apk`.
 * If you navigate to the build directory then app then apk then release you should find your apk file if everything went to plan. 
 ### iOS
-* Buliding iOS from source isn't possible due to a signing limitation by Apple. Please use the compiled [ipa](https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/tag/0.3) and sideload it using Cydia Impactor.
+* Buliding iOS from source isn't possible due to a signing limitation by Apple. Please use the compiled [ipa](https://github.com/CyberDiscovery/Cyber-Discovery-App/releases/) and sideload it using Cydia Impactor.
 
 ## Screen Shots
 
