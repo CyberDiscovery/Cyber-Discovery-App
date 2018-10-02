@@ -14,10 +14,10 @@ dependencies:
   # Other Dependencies
   cached_network_image: "^0.4.1"
   flutter_cache_manager: "^0.1.1"
-  audioplayer: "^0.4.0"
+  audioplayers: "^0.7.7"
   xml: "^3.0.0"
-  html2md: "^0.1.7"
-  flutter_markdown: "^0.1.5"
+  html2md: "^0.2.1"
+  flutter_markdown: "^0.2.0"
   intl: "^0.15.6"
   url_launcher: "^3.0.3"
 
