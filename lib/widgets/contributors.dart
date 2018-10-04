@@ -15,7 +15,7 @@ class Contributors extends StatelessWidget {
               children: <Widget>[
                 new Image.asset("assets/images/contributors.png"),
                 new Padding(
-                  padding: new EdgeInsets.all(5.0),
+                  padding: new EdgeInsets.all(15.0),
                   child: new Column(
                     children: <Widget>[
                       new Text("Contributors", style: Theme.of(context).textTheme.headline),
