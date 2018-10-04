@@ -27,11 +27,11 @@ class Comunity extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     new Padding(
-                      padding: new EdgeInsets.symmetric(vertical: 10.0),
+                      padding: new EdgeInsets.symmetric(vertical: 5.0),
                       child: new Text(_data.title, style: Theme.of(context).textTheme.headline, textAlign: TextAlign.center,),
                     ),
                     new Padding(
-                      padding: new EdgeInsets.only(bottom: 5.0),
+                      padding: new EdgeInsets.only(bottom: 2.0),
                       child: new Text(_data.subtitle, style: Theme.of(context).textTheme.subhead, textAlign: TextAlign.center,),
                     ),
                     new Flexible(
@@ -39,7 +39,7 @@ class Comunity extends StatelessWidget {
                       fit: FlexFit.tight,
                     ),
                     new Padding(
-                      padding: new EdgeInsets.symmetric(vertical: 5.0),
+                      padding: new EdgeInsets.symmetric(vertical: 3.0),
                       child: new RaisedButton(
                         color: Theme.of(context).primaryColor,
                         textColor: Colors.white,
