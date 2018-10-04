@@ -59,7 +59,7 @@ class _CountdownState extends State<Countdown> with TickerProviderStateMixin {
         builder: (BuildContext context, Widget child) {
           var times = durationToHumanTime(event);
           return new Padding(
-            padding: new EdgeInsets.symmetric(horizontal: 20.0),
+            padding: new EdgeInsets.symmetric(horizontal: 25.0),
             child: new Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -105,7 +105,7 @@ class _CountdownState extends State<Countdown> with TickerProviderStateMixin {
                 new Flexible(
                   fit: FlexFit.loose,
                   child: new Text(
-                    "minutes",
+                    "mins",
                     style: Theme.of(context).textTheme.body1,
                   ),
                 ),
@@ -120,7 +120,7 @@ class _CountdownState extends State<Countdown> with TickerProviderStateMixin {
                 new Flexible(
                   fit: FlexFit.loose,
                   child: new Text(
-                    "seconds",
+                    "secs",
                     style: Theme.of(context).textTheme.body1,
                   ),
                 ),
