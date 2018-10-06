@@ -38,7 +38,7 @@ class ComunityPage extends StatelessWidget {
     return new Padding(
       padding: new EdgeInsets.all(5.0),
       child: new FutureBuilder(
-        future: getComunityData(_db, context),
+        future: getComunityData(_db, context).timeout(new Duration(seconds: 3)),
         builder: (BuildContext context, AsyncSnapshot<List<ComunityData>> snapshot) {
           if (snapshot.hasError) {
             return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
