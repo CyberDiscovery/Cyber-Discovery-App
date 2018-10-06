@@ -22,7 +22,7 @@ class SoundBoardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new FutureBuilder(
-      future: getTabData(),
+      future: getTabData().timeout(new Duration(seconds: 3)),
       builder: (BuildContext context, AsyncSnapshot<DataSnapshot> snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.waiting:
@@ -30,6 +30,10 @@ class SoundBoardPage extends StatelessWidget {
               child: new CircularProgressIndicator(),
             );
           case ConnectionState.done:
+            if (snapshot.hasError) {
+              return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
+            }
+            
             //Load Tabs
             int i = 0;
             List<Widget> tabs = [];
@@ -39,6 +43,7 @@ class SoundBoardPage extends StatelessWidget {
               tabPages.add(new SoundTab(_db, _analytics, audioPlayer, snapshot.data.value[i.toString()]));
             }
 
+            //Creates Widgets
             return new DefaultTabController(
               length: i+1,
               child: new Scaffold(

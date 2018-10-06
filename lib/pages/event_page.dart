@@ -36,7 +36,7 @@ class EventPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new FutureBuilder(
-      future: getEventData(_db, context),
+      future: getEventData(_db, context).timeout(new Duration(seconds: 3)),
       builder: (BuildContext context, AsyncSnapshot<List<EventData>> snapshot) {
         if (snapshot.hasError) {
           return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
