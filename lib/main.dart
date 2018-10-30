@@ -24,6 +24,7 @@ Future<void> main() async {
         databaseURL: 'https://cyber-discovery.firebaseio.com',
       )
   );
+
   runApp(new CyberDiscoveryApp(app));
 } 
 
@@ -39,13 +40,17 @@ class _CyberDiscoveryAppState extends State<CyberDiscoveryApp> {
   final FirebaseApp _app;
   _CyberDiscoveryAppState(this._app);
 
-  static FirebaseAnalytics analytics = new FirebaseAnalytics();
-  final FirebaseMessaging firebaseMessaging = new FirebaseMessaging();
+  static FirebaseAnalytics _analytics = new FirebaseAnalytics();
+  final FirebaseMessaging _firebaseMessaging = new FirebaseMessaging();
 
   @override
   void initState() {
     super.initState();
-    firebaseMessaging.requestNotificationPermissions();
+    _firebaseMessaging.requestNotificationPermissions();
+    _firebaseMessaging.configure();
+    _firebaseMessaging.getToken().then((String token){
+      print(token);
+    });
   }
 
   @override
@@ -62,7 +67,7 @@ class _CyberDiscoveryAppState extends State<CyberDiscoveryApp> {
         accentColor: new Color.fromRGBO(62, 174, 211, 1.0),
         fontFamily: "Dosis",
       ),
-      home: new HomePage(db, analytics),
+      home: new HomePage(db, _analytics),
     );
   }
 }

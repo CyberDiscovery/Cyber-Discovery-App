@@ -33,33 +33,12 @@ class ComunityPage extends StatelessWidget {
     return comunityData;
   }
   
-  
   @override
-  Widget build(BuildContext context) {
-    /*List<Widget> comunitys = [
-      new Text("Comunity", style: Theme.of(context).textTheme.headline.apply(color: Colors.white)),
-      new Text("Over the course of Cyber Discovery a large community has formed.  Originating from the discord server several community projects were undertaken showing the strength of the community, this app is one of them.  Some others and other pillars of the community are listed below.", style: Theme.of(context).textTheme.body1.apply(color: Colors.white)),
-      new Divider(),
-      new Comunity(
-        "Discord",
-        "Come and Lurk",
-        "https://discord.gg/Kf8n5rT",
-        "assets/images/discord_qr.png"
-      ),
-      new Comunity(
-        "The App",
-        "Leave a 5 star review xxx",
-        "https://play.google.com/store/apps/details?id=com.danielmilnes.cyberdiscovery",
-        "assets/images/playstore_qr.png"
-      ),
-      new Comunity(
-        "Challenge Master", "A shit webiste I made", "https://challenge-master.firebaseapp.com/", "assets/images/discord_qr.png")
-    ];*/
-    
+  Widget build(BuildContext context) {   
     return new Padding(
       padding: new EdgeInsets.all(5.0),
       child: new FutureBuilder(
-        future: getComunityData(_db, context),
+        future: getComunityData(_db, context).timeout(new Duration(seconds: 3)),
         builder: (BuildContext context, AsyncSnapshot<List<ComunityData>> snapshot) {
           if (snapshot.hasError) {
             return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
@@ -82,9 +61,6 @@ class ComunityPage extends StatelessWidget {
           }
         }
       )
-      
-      
-      
     );
   }
 }

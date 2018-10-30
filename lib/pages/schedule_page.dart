@@ -17,7 +17,7 @@ class SchedulePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new FutureBuilder<DataSnapshot>(
-      future: getTabData(),
+      future: getTabData().timeout(new Duration(seconds: 3)),
       builder: (BuildContext context, AsyncSnapshot<DataSnapshot> snapshot){
         switch(snapshot.connectionState) {
           case ConnectionState.waiting:
@@ -25,6 +25,10 @@ class SchedulePage extends StatelessWidget {
               child: new CircularProgressIndicator(),
             );
           case ConnectionState.done:
+            if (snapshot.hasError) {
+              return new ErrorMessage("Welp Something Went Wrong", "Check your connection to the internet");
+            }
+            
             //Load Tabs
             var data = snapshot.data.value;
             int i = 0;
@@ -36,6 +40,7 @@ class SchedulePage extends StatelessWidget {
               tabPages.add(new ScheduleTab(_db, data[i.toString()]));
             }
 
+            //Create Widgets
             if (tabs.length > 0) {
               return new DefaultTabController(
                 length: i+1,

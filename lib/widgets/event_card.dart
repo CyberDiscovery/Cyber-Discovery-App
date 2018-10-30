@@ -14,7 +14,7 @@ class EventCard extends StatelessWidget {
     return new Padding(
       padding: new EdgeInsets.symmetric(vertical: 15.0, horizontal: 5.0),
         child: new Card(
-        color: Colors.white,
+        margin: new EdgeInsets.all(0.0),
         child: new Column(
           children: <Widget>[
             new Container(
