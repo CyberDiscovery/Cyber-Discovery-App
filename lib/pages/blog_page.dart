@@ -10,7 +10,7 @@ import 'package:cyber_discovery/widgets/error_message.dart';
 class BlogPage extends StatelessWidget {
   
   Future<String> getRSSData() async {
-    String rssFeed = "https://medium.com/feed/@CyberDiscUK";
+    String rssFeed = "https://medium.com/feed/@CyberStart";
     String data = await http.read(rssFeed);
     //TODO implement https://pub.dartlang.org/packages/petitparser
     
