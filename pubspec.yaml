@@ -6,7 +6,7 @@ dependencies:
     sdk: flutter
 
   # Firebase
-  firebase_core: "^0.2.4"
+  firebase_core: "^0.3.0"
   firebase_database: "^1.0.1"
   firebase_messaging: "^1.0.2"
   firebase_analytics: "^1.0.1"
