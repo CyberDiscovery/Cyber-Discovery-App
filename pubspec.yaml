@@ -12,7 +12,7 @@ dependencies:
   firebase_analytics: "^1.0.1"
 
   # Other Dependencies
-  cached_network_image: "^0.4.1"
+  cached_network_image: "^0.7.0"
   flutter_cache_manager: "^0.1.1"
   audioplayers: "^0.7.7"
   xml: "^3.0.0"
