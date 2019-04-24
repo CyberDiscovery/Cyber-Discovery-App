@@ -19,7 +19,7 @@ dependencies:
   html2md: "^0.2.1"
   flutter_markdown: "^0.2.0"
   intl: "^0.15.6"
-  url_launcher: "^3.0.3"
+  url_launcher: "^5.0.0"
 
 dev_dependencies:
   flutter_test:
