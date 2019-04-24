@@ -13,7 +13,7 @@ dependencies:
 
   # Other Dependencies
   cached_network_image: "^0.4.1"
-  flutter_cache_manager: "^0.1.1"
+  flutter_cache_manager: "^0.3.0"
   audioplayers: "^0.7.7"
   xml: "^3.0.0"
   html2md: "^0.2.1"
