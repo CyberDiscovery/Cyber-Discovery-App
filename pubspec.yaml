@@ -9,7 +9,7 @@ dependencies:
   firebase_core: "^0.2.4"
   firebase_database: "^1.0.1"
   firebase_messaging: "^1.0.2"
-  firebase_analytics: "^1.0.1"
+  firebase_analytics: "^2.0.0"
 
   # Other Dependencies
   cached_network_image: "^0.4.1"
