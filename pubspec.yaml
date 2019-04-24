@@ -8,7 +8,7 @@ dependencies:
   # Firebase
   firebase_core: "^0.2.4"
   firebase_database: "^1.0.1"
-  firebase_messaging: "^1.0.2"
+  firebase_messaging: "^4.0.0"
   firebase_analytics: "^1.0.1"
 
   # Other Dependencies
